@@ -6,5 +6,20 @@ html, body {
 }
 
 #area-jogo {
-    display: flex;
+    /* display: flex; */
+    width: 100%;
+}
+
+.caixa {
+    margin-top: 1.5rem;
+    padding: 0.7rem;
+    width: 100%;
+    border: 0.02rem solid grey;
+    box-shadow: 0.2rem 0.2rem lightgray;
+    text-align: center;
+}
+
+.caixinha {
+    width: 28rem;
+    margin: 0rem 2rem 0rem;
 }
