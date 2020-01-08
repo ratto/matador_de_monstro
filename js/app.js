@@ -2,6 +2,7 @@ new Vue({
     el: "#app",
     data() {
         return {
+            jogoIniciado: false,
             jogador: {
                 vida: 100,
                 ataqueMin: 1,
@@ -30,8 +31,30 @@ new Vue({
             this.jogador.vida -= this.ataqueTotal(this.monstro.ataqueMin, this.monstro.ataqueMax);
         },
 
+        desistir() {
+            this.jogador.vida = 100;
+            this.monstro.vida = 100;
+            this.jogoIniciado = false;
+        },
+
         ataqueTotal(min, max) {
             return Math.floor(Math.random() * max) + min;
-        }  
+        },
     },
+    computed: {
+        barraJogador: function() {
+            if(this.jogador.vida < 20) {
+                return "progress-bar bg-danger";
+            } else {
+                return "progress-bar bg-success";
+            }
+        },
+        barraMonstro: function() {
+            if(this.monstro.vida < 20) {
+                return "progress-bar bg-danger";
+            } else {
+                return "progress-bar bg-success";
+            }
+        },
+    }
 })
