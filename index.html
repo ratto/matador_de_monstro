@@ -26,10 +26,10 @@
                                         <div class="p-1"><h3>Jogador</h3></div>
                                         <div class="p-1">
                                             <div class="progress">
-                                                <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                <div class="progress-bar bg-success" role="progressbar" :style="{ width: jogador.vida + '%' }" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                         </div>
-                                        <div class="p-1">100%</div>
+                                        <div class="p-1">{{ jogador.vida + '%' }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -40,10 +40,10 @@
                                         <div class="p-1"><h3>Monstro</h3></div>
                                         <div class="p-1">
                                             <div class="progress">
-                                                <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                <div class="progress-bar bg-success" role="progressbar" :style="{ width: monstro.vida + '%' }" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                         </div>
-                                        <div class="p-1">100%</div>
+                                        <div class="p-1">{{ monstro.vida + '%' }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -52,13 +52,13 @@
                     <div class="caixa">
                         <div class="d-flex justify-content-center">
                             <div class="p-2">
-                                <button type="button" class="btn btn-danger">Atacar</button>
+                                <button @click="atacar" type="button" class="btn btn-danger">Atacar</button>
                             </div>
                             <div class="p-2">
-                                <button type="button" class="btn btn-warning">Ataque especial</button>
+                                <button @click="ataqueEspecial" type="button" class="btn btn-warning">Ataque especial</button>
                             </div>
                             <div class="p-2">
-                                <button type="button" class="btn btn-success">Curar</button>
+                                <button @click="curar" type="button" class="btn btn-success">Curar</button>
                             </div>
                             <div class="p-2">
                                 <button type="button" class="btn btn-secondary">Desistir</button>
