@@ -1,0 +1,10 @@
+/* estilos para o Matador de Monstros */
+
+/* Global */
+html, body {
+    height: 100%;
+}
+
+#area-jogo {
+    display: flex;
+}
